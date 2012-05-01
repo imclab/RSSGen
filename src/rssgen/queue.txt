@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 	<channel>
-		<title>AudTorrent</title>
-		<description>Media avialable on AudTorrent.</description>
-		<link>http://audtorrent/tv_shows</link>
-		<lastBuildDate>{{time}}</lastBuildDate>
-		<pubDate>{{time}}</pubDate>
+		<title>{{Host}}</title>
+		<description>Media avialable on {{Host}}.</description>
+		<link>{{MediaURL}}</link>
+		<lastBuildDate>{{Time}}</lastBuildDate>
+		<pubDate>{{Time}}</pubDate>
 		{{range .}}<item>
 			<title>{{.Show.Title}} - {{.EpCode}} - {{.Title}}</title>
 			<description>{{html .Description}}</description>
-			<link>http://audtorrent/tv_shows/{{.Filename}}</link>
+			<link>{{MediaURL}}{{.Filename}}</link>
 			<guid>{{.GUID}}</guid>
 			<pubDate>{{.PubDate}}</pubDate>
-			<enclosure url="http://audtorrent/tv_shows/{{.Filename}}" length="{{.Length}}" type="{{.Type}}"/>
+			<enclosure url="{{MediaURL}}{{.Filename}}" length="{{.Length}}" type="{{.Type}}"/>
 		</item>
 		{{end}}
 	</channel>

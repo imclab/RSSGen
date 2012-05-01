@@ -9,3 +9,9 @@ I quickly discovered that the podcast application (formerly known as Queue) does
 This program will scan a given directory for media and lookup metadata from trakt.tv for tv shows. Information it pulls are things like the air date, episode title and description.
 
 A sample configuration file is provided, the path to the media, and path to the feed that should be created are required along with your trakt.tv api key which can be found [here](http://trakt.tv/settings/api).
+
+There are some tricky networking things we need to do to make the feed usable with the Podcast app. First, the Podcast app stores all of it's information using Google Reader, so in order to subscribe to the feed, the feed must be visible to Google Reader, which means it must be publicly available. In my network I've simply forwarded an arbitrary port from my router to my server, in this case TCP port 2223. I've then created a redirect on lighttpd the web server I'm using to serve the feed.
+
+`$SERVER["socket"] == ":2223" {
+	server.document-root = "/home/username/path/to/feed/directory/"
+}`

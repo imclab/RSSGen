@@ -35,4 +35,4 @@ The sample configuration is stored in json format and is shown below:
 		"MediaURL": "http://hostname_of_server/path/to/media"
 	}
 
-Adjust the parameters as you see fit. Mind you the Host field is only for aesthetics in the feed to identify what system the feed was generated on. `FeedPath` should be the directory publicly visible to the Google Reader service.
+Adjust the parameters as you see fit. Mind you `Host` is only for aesthetics in the feed to identify what system the feed was generated on. `FeedPath` should be the directory publicly visible to the Google Reader service.

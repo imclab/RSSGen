@@ -8,7 +8,7 @@ I quickly discovered that the podcast application (formerly known as Queue) does
 
 This program will scan a given directory for media and lookup metadata from trakt.tv for tv shows. Information it pulls are things like the air date, episode title and description.
 
-A sample configuration file is provided, the path to the media, and path to the feed that should be created are required along with your trakt.tv api key which can be found [here](http://trakt.tv/settings/api).
+A sample configuration file is provided, the path to the media, and path to the feed that should be created are required along with your trakt.tv api key which can be found at: [http://trakt.tv/settings/api](http://trakt.tv/settings/api)
 
 ### Networking
 
@@ -18,4 +18,8 @@ There are some tricky networking things we need to do to make the feed usable wi
 		server.document-root = "/home/username/path/to/feed/directory/"
 	}
 
-Having dynamic DNS for those of us without static WAN IP addresses is really helpful. Simply browse to your external IP address (or dynDNS) at port :2223 on your Google TV and subscribe to the feed. The address used in the configuration to tell the Podcast app where the media lives can and should be a local address.
+Having dynamic DNS for those of us without static WAN IP addresses is really helpful. Simply browse to your external IP address (or dynDNS) at port :2223 on your Google TV and subscribe to the feed. The address used in the configuration to tell the Podcast app where the media lives can and should be a local address such as:
+
+	http://mediaserver/path/to/media/
+
+Where mediaserver is a local hostname (or IP address, either will work) and the path to the media gives direct http access to the files of the media directory.

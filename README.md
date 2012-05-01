@@ -10,8 +10,12 @@ This program will scan a given directory for media and lookup metadata from trak
 
 A sample configuration file is provided, the path to the media, and path to the feed that should be created are required along with your trakt.tv api key which can be found [here](http://trakt.tv/settings/api).
 
-There are some tricky networking things we need to do to make the feed usable with the Podcast app. First, the Podcast app stores all of it's information using Google Reader, so in order to subscribe to the feed, the feed must be visible to Google Reader, which means it must be publicly available. In my network I've simply forwarded an arbitrary port from my router to my server, in this case TCP port 2223. I've then created a redirect on lighttpd the web server I'm using to serve the feed.
+### Networking
 
-`$SERVER["socket"] == ":2223" {
-	server.document-root = "/home/username/path/to/feed/directory/"
-}`
+There are some tricky networking things we need to do to make the feed usable with the Podcast app. First, the Podcast app stores all of it's information using Google Reader, so in order to subscribe to the feed, the feed must be visible to Google Reader, which means it must be publicly available. In my network I've simply forwarded an arbitrary port from my router to my server, in this case TCP port 2223. I've then created a redirect on lighttpd the web server I'm using to serve the feed. Below is the configuration I'm using for the redirect to the feed folder.
+
+	$SERVER["socket"] == ":2223" {
+		server.document-root = "/home/username/path/to/feed/directory/"
+	}
+
+Having dynamic DNS for those of us without static WAN IP addresses is really helpful. Simply browse to your external IP address (or dynDNS) at port :2223 on your Google TV and subscribe to the feed. The address used in the configuration to tell the Podcast app where the media lives can and should be a local address.

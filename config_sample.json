@@ -1,0 +1,5 @@
+{
+	"TraktAPI": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+	"MediaPath": "/home/username/path/to/tv_shows",
+	"FeedPath": "Feed/queue.xml"
+}

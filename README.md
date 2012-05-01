@@ -23,3 +23,16 @@ Having dynamic DNS for those of us without static WAN IP addresses is really hel
 	http://mediaserver/path/to/media/
 
 Where mediaserver is a local hostname (or IP address, either will work) and the path to the media gives direct http access to the files of the media directory.
+
+### Configuration
+The sample configuration is stored in json format and is shown below:
+
+	{
+		"TraktAPI": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+		"MediaPath": "/home/username/path/to/tv_shows",
+		"FeedPath": "Feed/queue.xml",
+		"Host": "Hostname_for_display_only",
+		"MediaURL": "http://hostname_of_server/path/to/media"
+	}
+
+Adjust the parameters as you see fit. Mind you the Host field is only for aesthetics in the feed to identify what system the feed was generated on. `FeedPath` should be the directory publicly visible to the Google Reader service.

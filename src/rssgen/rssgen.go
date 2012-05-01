@@ -37,6 +37,8 @@ type Config struct {
 	TraktAPI string
 	MediaPath string
 	FeedPath string
+	Host string
+	MediaURL string
 }
 
 // Type for storing information about each item
@@ -267,9 +269,10 @@ func main() {
 	// Sort by date, newest to oldest
 	sort.Sort(items)
 	
-	// Time method for pubdate of channel
 	funcMap := template.FuncMap{
-		"time": func() string {return time.Now().UTC().Format(time.RFC1123Z)},
+		"Time": func() string {return time.Now().UTC().Format(time.RFC1123Z)},
+		"Host": func() string {return config.Host},
+		"MediaURL": func() string {return config.MediaURL},
 	}
 	
 	// Parse the queue template

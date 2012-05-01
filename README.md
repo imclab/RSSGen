@@ -6,7 +6,7 @@ A simple solution is to simply host a web server from some system on your networ
 ### The Solution
 I quickly discovered that the Podcast app (formerly known as Queue) does a pretty good job of playing media enclosed in an RSS feed. It suspends timing for the screensaver to come on so you're never interrupted. The media position bar along with media controls fade away after a set amount of time. Overall it's better than playing media directly in the browser. You also get the added benefit of keeping track of what you've watched and when it was aired, you can also inject other useful information about the media.
 
-This program will scan a given directory for media and lookup metadata from trakt.tv for tv shows. Information it pulls are things like the air date, episode title and description.
+This program will scan a given directory for media and lookup metadata from trakt.tv for tv shows. Information it pulls are things like the air date, episode title and description. This program was written in Google's general purpose programming language [Go](http://golang.org/).
 
 ### Networking
 

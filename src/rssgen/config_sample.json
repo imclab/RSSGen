@@ -2,4 +2,6 @@
 	"TraktAPI": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
 	"MediaPath": "/home/username/path/to/tv_shows",
 	"FeedPath": "Feed/queue.xml"
+	"Host": "Hostname_for_display_only",
+	"MediaURL": "http://hostname_of_server/path/to/media"
 }

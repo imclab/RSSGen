@@ -9,15 +9,15 @@ import (
 	"time"
 	"regexp"
 	"strings"
-	"minheap"
+	"./minheap"
 	"net/url"
 	"net/http"
 	"crypto/md5"
-	"errhandler"
-	"levenshtein"
+	"./levenshtein"
 	"encoding/json"
 	"path/filepath"
 	"text/template"
+	"github.com/bemasher/errhandler"
 )
 
 var (
